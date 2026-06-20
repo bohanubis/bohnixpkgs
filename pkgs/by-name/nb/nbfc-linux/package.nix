@@ -8,6 +8,8 @@
   curl,
   libxml2,
   openssl,
+  nix-update-script,
+  versionCheckHook,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
