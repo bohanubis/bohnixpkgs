@@ -37,6 +37,11 @@ stdenv.mkDerivation (finalAttrs: {
     "--bindir=${placeholder "out"}/bin"
   ];
 
+  passthru.updateScript = nix-update-script { };
+
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  doInstallCheck = true;
+
   meta = {
     description = "C port of Stefan Hirschmann's NoteBook FanControl";
     longDescription = ''
