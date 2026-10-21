@@ -26,6 +26,9 @@ stdenv.mkDerivation {
 
   makeFlags = kernelModuleMakeFlags ++ [
     "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    "INSTALL_MOD_PATH=${placeholder "out"}"
+    "INSTALL_MOD_DIR=misc"
+    "DEPMOD=true"
   ];
 
   installPhase = ''
