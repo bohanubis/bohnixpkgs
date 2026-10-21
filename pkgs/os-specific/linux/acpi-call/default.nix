@@ -31,7 +31,7 @@ stdenv.mkDerivation {
     "DEPMOD=true"
   ];
 
-  installPhase = ''
+  postInstall = ''
     install -D -m755 examples/turn_off_gpu.sh $out/bin/test_discrete_video_off.sh
   '';
 
